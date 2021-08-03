@@ -37,6 +37,11 @@ public class ConnectCommand extends Command {
     ProxiedPlayer player;
 
     if(args.length == 2) {
+      if(!sender.hasPermission("moonlar.command.send.other")) {
+        msg(sender, ChatColor.RED + "Sem permissão para conectar outro jogador...");
+        return;
+      }
+
       player = plugin.getProxy().getPlayer(args[1]);
 
       if(player == null) {
@@ -58,8 +63,8 @@ public class ConnectCommand extends Command {
       msg(sender, ChatColor.GREEN + "Enviando " + player.getName() + " para " + server.getName());
     }
 
-    player.connect(server);
     msg(sender, ChatColor.GREEN + "Conectado em " + server.getName());
+    player.connect(server);
   }
 
   private void msg(CommandSender sender, String message) {
