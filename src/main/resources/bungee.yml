@@ -1,0 +1,4 @@
+name: BungeeConnect
+version: @version@
+main: net.moonlar.bungeeconnect.BungeeConnect
+description: Proxy utils
