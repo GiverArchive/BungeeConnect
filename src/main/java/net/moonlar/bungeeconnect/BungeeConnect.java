@@ -6,11 +6,11 @@ public final class BungeeConnect extends Plugin {
 
   @Override
   public void onEnable() {
-    // Plugin startup logic
+    getProxy().getPluginManager().registerCommand(this, new ConnectCommand(this));
   }
 
   @Override
   public void onDisable() {
-    // Plugin shutdown logic
+
   }
 }
